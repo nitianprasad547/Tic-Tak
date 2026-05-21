@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,6 +26,125 @@
         </div>
     </div>
     <button id="reset-btn" class="p-1 text-2xl bg-amber-50 text-black rounded-xl border-0">Reset Game</button>
+    <script src="app.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="output.css">
+    <style>
+        /* Ekdum simple floating button */
+        #chat-toggle-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* Ekdum simple chat box */
+        #chat-panel {
+            display: none; /* Shuru mein chat box chhupa rahega */
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background-color: #1e1b4b; /* Dark blue color */
+            border: 2px solid blue;
+        }
+
+        #chat-header {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between; /* Text aur close button ko alag karne ke liye */
+        }
+
+        #chat-close-btn {
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #chat-messages {
+            height: 300px;
+            overflow-y: scroll;
+            padding: 10px;
+            color: white;
+        }
+
+        #chat-input-row {
+            padding: 10px;
+            display: flex;
+        }
+
+        #chat-input {
+            width: 80%;
+            padding: 5px;
+        }
+
+        #chat-send {
+            width: 20%;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="items-center justify-center flex flex-col bg-slate-950 text-amber-50">
+
+    <div class="msgcontainer hidden items-center justify-center flex-col h-[40vmin]">
+        <p id="msg" class="text-[8vmin] p-5">Winner</p>
+        <button id="new-btn" class="p-1 text-2xl bg-amber-50 text-black rounded-xl border-0">New Game</button>
+    </div>
+
+    <h1 class="text-4xl mt-6 mb-2">TIC-TAC-TOE</h1>
+
+    <div class="h-[70vh] flex justify-center items-center">
+        <div class="h-[60vmin] w-[60vmin] flex flex-wrap justify-center items-center gap-[1.5vmin]">
+            <button class="box h-[18vmin] w-[18vmin] rounded-[3vmin] border-0 bg-indigo-800 text-cyan-200 text-[8vmin]"></button>
+            <button class="box h-[18vmin] w-[18vmin] rounded-[3vmin] border-0 bg-indigo-800 text-cyan-200 text-[8vmin]"></button>
+            <button class="box h-[18vmin] w-[18vmin] rounded-[3vmin] border-0 bg-indigo-800 text-cyan-200 text-[8vmin]"></button>
+            <button class="box h-[18vmin] w-[18vmin] rounded-[3vmin] border-0 bg-indigo-800 text-cyan-200 text-[8vmin]"></button>
+            <button class="box h-[18vmin] w-[18vmin] rounded-[3vmin] border-0 bg-indigo-800 text-cyan-200 text-[8vmin]"></button>
+            <button class="box h-[18vmin] w-[18vmin] rounded-[3vmin] border-0 bg-indigo-800 text-cyan-200 text-[8vmin]"></button>
+            <button class="box h-[18vmin] w-[18vmin] rounded-[3vmin] border-0 bg-indigo-800 text-cyan-200 text-[8vmin]"></button>
+            <button class="box h-[18vmin] w-[18vmin] rounded-[3vmin] border-0 bg-indigo-800 text-cyan-200 text-[8vmin]"></button>
+            <button class="box h-[18vmin] w-[18vmin] rounded-[3vmin] border-0 bg-indigo-800 text-cyan-200 text-[8vmin]"></button>
+        </div>
+    </div>
+    <button id="reset-btn" class="p-1 text-2xl bg-amber-50 text-black rounded-xl border-0">Reset Game</button>
+
+    <button id="chat-toggle-btn">💬</button>
+
+    <div id="chat-panel">
+        <div id="chat-header">
+            <span>Game Assistant</span>
+            <button id="chat-close-btn">X</button>
+        </div>
+        <div id="chat-messages">
+            <div>👋 Hi! Chat with me.</div>
+        </div>
+        <div id="chat-input-row">
+            <input id="chat-input" type="text" placeholder="Type here..." />
+            <button id="chat-send">Send</button>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
