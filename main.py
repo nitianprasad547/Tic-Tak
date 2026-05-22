@@ -2,11 +2,14 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import os
 import google.generativeai as genai
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI()
 from fastapi.middleware.cors import CORSMiddleware
 
-# app = FastAPI() ke theek neeche yeh lagana padega:
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"], 
@@ -15,7 +18,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY", "AIzaSyAOCycIwgbvtjWIKQA7ckuQChQZ90P-1Tc"))
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = genai.GenerativeModel(
     model_name="gemini-3.5-flash",
     system_instruction=(
